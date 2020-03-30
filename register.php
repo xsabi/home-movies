@@ -142,6 +142,7 @@ if (count($errors) === 0) {
 				</form>
 			</div>
 		</div>
+<<<<<<< Updated upstream
         </div>
 
 
@@ -171,7 +172,12 @@ $(function(){
     });
   });
 </script>
+=======
+    </div>
+>>>>>>> Stashed changes
 
+<?php 
+include_once 'components/script.php';
 
-      
-	
+include_once 'components/tail.php';
+?>
