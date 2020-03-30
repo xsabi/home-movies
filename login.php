@@ -1,6 +1,7 @@
 
 <?php
-$hashcode = 'SELECT * FROM USER WHERE email = ' .$_POST['logEmail'];
+
+$hashcode = 'SELECT * FROM USER WHERE email ='  .$_POST['logEmail'];
 if (password_verify($password, $hashcode)) {
     echo 'Correct Password!!!';
 } else {
@@ -8,9 +9,8 @@ if (password_verify($password, $hashcode)) {
 }
 
 ?>
-<div id ="modalLogin" class="modal">
-	<div class="modal-content">
-	<a class="waves-effect waves-light btn-flat modal-close right"><i class="tiny material-icons">close</i></a>
+
+	
 		<div class="container">
 		<h4>Log in</h4>
 			<div class="row">
@@ -33,18 +33,15 @@ if (password_verify($password, $hashcode)) {
 						</div>
 
 					</div>
-					<button class="btn modal-close waves-effect waves-light" type="submit" name="action">LogIn
-					<i class="material-icons right"></i>
-					</button>
+				
+					<input class="waves-effect waves-light btn" type="submit" name="submit" id="login" value="login"> 
 				</form>
 
 			</div>
 
 		</div>
 
-	</div>
 
-</div>
 
 
 

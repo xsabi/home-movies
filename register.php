@@ -2,7 +2,8 @@
 
 
 require_once 'components/database.php';
-echo 'hello' . '<br>';
+
+// echo 'hello' . '<br>';
 function test_input($data) {
    $data = trim($data);
    $data = stripslashes($data);
@@ -18,10 +19,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        $errors[] = "First name is required";
     }else if (!preg_match("/^[a-zA-Z ]+$/",$firstName)) {
         $errors[] = "First name must contain only alphabets and space";
-    }
     }else {
        $firstName = test_input($_POST["regFirstname"]);
     }
+}
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (empty($_POST["regLastname"])) {
@@ -73,7 +74,7 @@ if (count($errors) === 0) {
     // $connect = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
 
     $query = "INSERT INTO user(first_name, last_name, email, password) 
-    VALUES('" . $_POST['regFirstname'] . "','" . $_POST['regLastname'] . "', '" . $hashedPassword. "')";
+    VALUES('" . $_POST['regFirstname'] . "','" . $_POST['regLastname'] . "', '" . $_POST['regEmail'] . "','" . $hashedPassword. "')";
 
     echo $query;
 
@@ -92,9 +93,8 @@ if (count($errors) === 0) {
 ?>
 
 <?php include_once 'components/head.php'; ?>
-<div id ="modalRegister" class="modal">
-	<div class="modal-content">
-		<!-- <a class="waves-effect waves-light btn-flat modal-close right"><i class="tiny material-icons">close</i></a> -->
+
+		<div>
 		<div class="container">
 		<h4>Register a new user</h4>
 			<div class="row">
@@ -115,7 +115,7 @@ if (count($errors) === 0) {
 					</div>
 					<div class="row">
 						<div class="input-field col s12">
-							<label for="regUsername">Email :</label>
+							<label for="regEmail">Email :</label>
 							<input type="email" name="regEmail" id="regEmail" class="validate" required>
 							<span class="helper-text" data-error="wrong" data-success="right">bensera@live.com</span>
 						</div>
@@ -128,27 +128,24 @@ if (count($errors) === 0) {
 						</div>
 					</div>
 			
-					<button class="btn modal-close waves-effect waves-light" type="submit" name="register" id="register">Register
-					<i class="material-icons right"></i>
-					</button>
+				<input class="waves-effect waves-light btn" type="submit" name="submit" id="register" value="register"> 
+		
 				</form>
-
 			</div>
-
 		</div>
+        </div>
 
-	</div>
 
-</div>
-
+<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 <script>
+   
 $(function(){
    //register click eventhandler for login button
     $('#register').click(function(e){
       console.log('Register button clicked...');
       e.preventDefault();
       $.ajax({
-        url: 'register.php',
+        // url: 'register.php',
         type: 'post',
         data: $('form').serialize(),
         success: function(result) {
@@ -165,7 +162,6 @@ $(function(){
     });
   });
 </script>
-
 
 
       
