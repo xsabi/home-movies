@@ -5,22 +5,22 @@ include_once 'components/head.php';
 
 // here comes your PHP code generating the body content of your page
 
-header("Location: home.php");
-exit;
-
+include_once 'components/navbar.php';
 ?>
 
-<h1>Index page</h1>
+<main class="">
+    <h1>Home page</h1>
+</main>
 
 <?php 
-// add general jQuery and Materialize scrip files
+include_once 'components/footer.php';
 
-include_once 'register.php';
+// add general jQuery and Materialize scrip files
+include_once 'components/scripts.php';
+
 // add below here your page specific script file if you need
 // <script src="scripts/myscript.js"></script>
 
 // including the general closing body HTML tags
-include_once 'components/tail.php';
+include_once 'tail.php';
 ?>
-<!-- jQuery CDN -->
-<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
