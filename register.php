@@ -85,7 +85,7 @@ if (count($errors) === 0) {
     $query = "INSERT INTO user(first_name, last_name, email, password) 
     VALUES('" . $_POST['regFirstname'] . "','" . $_POST['regLastname'] . "', '" . $_POST['regEmail'] . "','" . $hashedPassword. "')";
 
-    echo $query;
+    // echo $query;
 
     // Send an SQL request to our DB
     $result_query = mysqli_query($connect, $query);
