@@ -17,7 +17,7 @@ $errors = array();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["regFirstname"])) {
        $errors[] = "First name is required";
-    }else if (!preg_match("/^[a-zA-Z ]+$/",$firstName)) {
+    }else if (!preg_match("/^[a-zA-Z ]+$/",$_POST["regFirstname"])) {
         $errors[] = "First name must contain only alphabets and space";
     }else {
        $firstName = test_input($_POST["regFirstname"]);
@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (empty($_POST["regLastname"])) {
            $errors[] = "Last name is required";
-        }else if (!preg_match("/^[a-zA-Z ]+$/",$lastName)) {
+        }else if (!preg_match("/^[a-zA-Z ]+$/",$_POST["regLastname"])) {
             $errors[] = "Last name must contain only alphabets and space";
         }else {
            $lastName = test_input($_POST["regLastname"]);
@@ -37,31 +37,40 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $errors[] = "Email is required";
     }else {
        $email = test_input($_POST["regEmail"]);
-       
-       // check if e-mail address is well-formed
-       if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      
+    }
+      // check if e-mail address is well-formed
+      if (!filter_var($_POST['regEmail'], FILTER_VALIDATE_EMAIL)) {
         $errors[] = "Invalid email format"; 
        }
-    }
 
     if (empty($_POST["regPassword"])) {
         $errors[] = "Password is required";
-    } else if(strlen($password) < 8) {
+    } else if(strlen($_POST["regPassword"]) < 8) {
            $errors[] = "Password must be minimum of 8 characters";
      }else {
         $password = test_input($_POST["regPassword"]);
      }
 
+
+// check if the user's email already exists    
+     $select = mysqli_query($connect, "SELECT email FROM user WHERE email = '".$_POST['regEmail']."'") or exit(mysqli_error($connect));
+     if(mysqli_num_rows($select)) {
+         
+        $errors[] ='<div class="red" color="red">This email is already being used. </div>';
+     }
+   
+
     
       // HASHING PASSWORD
-      $hash_Password = password_hash('mypassword123', PASSWORD_DEFAULT);
+      $hash_Password = password_hash($password, PASSWORD_DEFAULT);
 
-      var_dump($hash_Password);
+    //   var_dump($hash_Password);
 
       if (isset($_POST['regPassword'])) {
           $hashedPassword = password_hash($_POST['regPassword'], PASSWORD_DEFAULT);
   
-          var_dump($hashedPassword);
+        //   var_dump($hashedPassword);
       }
       
           
@@ -124,7 +133,7 @@ if (count($errors) === 0) {
 						<div class="input-field col s12">
 							<label for="regPassword">Password :</label>
 							<input type="password" name="regPassword" id="regPassword" class="validate" required>
-							<span class="helper-text" data-error="wrong" data-success="right">Length of your password should be minimum 8 characters.</span>
+							<span class="helper-text" data-error="wrong" data-success="right">Password must be minimum of 8 characters</span>
 						</div>
 					</div>
 			
@@ -141,7 +150,7 @@ if (count($errors) === 0) {
    
 $(function(){
    //register click eventhandler for login button
-    $('#register').click(function(e){
+    $('#register_wrong').click(function(e){
       console.log('Register button clicked...');
       e.preventDefault();
       $.ajax({

@@ -16,11 +16,11 @@ include_once 'components/navbar.php';
 include_once 'components/footer.php';
 
 // add general jQuery and Materialize scrip files
-include_once 'components/scripts.php';
+include_once 'components/script.php';
 
 // add below here your page specific script file if you need
 // <script src="scripts/myscript.js"></script>
 
 // including the general closing body HTML tags
-include_once 'tail.php';
+include_once 'components/tail.php';
 ?>

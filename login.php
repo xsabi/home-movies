@@ -1,7 +1,6 @@
-
 <?php
-
-$hashcode = 'SELECT * FROM USER WHERE email ='  .$_POST['logEmail'];
+$password =$_POST['logPassword'];
+$hashcode = 'SELECT * FROM user WHERE email = "' . $_POST['logEmail'] . '"';
 if (password_verify($password, $hashcode)) {
     echo 'Correct Password!!!';
 } else {
@@ -10,7 +9,7 @@ if (password_verify($password, $hashcode)) {
 
 ?>
 
-	
+<?php include_once 'components/head.php'; ?>
 		<div class="container">
 		<h4>Log in</h4>
 			<div class="row">
