@@ -59,31 +59,45 @@ function click(){
 }
 
 //to execute the query
-$query = "SELECT * FROM movie";
-$movieresults = mysqli_query($connect, $query);
+
+
 //retrieves results as an associative array
-while ($row = mysqli_fetch_assoc($movieresults)) {
+$query = 'SELECT * FROM  movie';
+
+  $movieresults = mysqli_query($connect, $query);
+  while ($row = mysqli_fetch_assoc($movieresults)) {
     
-echo '<div class="row">';
-  echo '<div class="col s12 m4">';
-    echo '<div class="card">';
-      echo '<div class="card-image">';
-        echo '<img src="' . $row['poster'] .' alt= '. $row['title'] .'">';
-        echo 'Movie : <span class="card-title">' . $row['title'] . '</span>';
-      echo '</div>';
-      echo '<div class="card-content">';
-        echo '<p> Date of Realease :'.$row['release_date'].' </p>';
-        echo '<p> Synopsis :  '.$row['synopsis'].' </p>';
-      echo '</div>';
-      echo '<div class="card-action">';
-        echo '<form method="post"><a href="#">Add to the playlist</a><br>';
-        echo'<a href="details.php">More Info</a></form>';
-        
+    echo '<div class="row">';
+      echo '<div class="col s12 m4">';
+        echo '<div class="card">';
+          echo '<div class="card-image">';
+            echo '<img src="' . $row['poster'] .' alt= '. $row['title'] .'">';
+            echo 'Movie : <span class="card-title">' . $row['title'] . '</span>';
+          echo '</div>';
+          echo '<div class="card-content">';
+            echo '<p> Date of Realease :'.$row['release_date'].' </p>';
+            echo '<p> Synopsis :  '.$row['synopsis'].' </p>';
+          echo '</div>';
+          echo '<div class="card-action">';
+            echo '<form method="post"><a href="#">Add to the playlist</a><br>';
+            echo'<a href="details.php?id=' . $row['id'] . '">More Info</a></form>';
+            echo '</div>';
+        echo '</div>';
       echo '</div>';
     echo '</div>';
-  echo '</div>';
-echo '</div>';
+    
+    }
 
-}
+
+
 
 ?>
+
+
+
+	
+
+
+</body>
+
+</html>
