@@ -5,17 +5,19 @@ include_once 'components/head.php';
 
 // here comes your PHP code generating the body content of your page
 
-header("Location: home.php");
-exit;
-
+include_once 'components/navbar.php';
 ?>
 
-<h1>Index page</h1>
+<main class="">
+    <h1>Home page</h1>
+</main>
 
 <?php 
+include_once 'components/footer.php';
+
 // add general jQuery and Materialize scrip files
 include_once 'components/scripts.php';
-include_once 'register.php';
+
 // add below here your page specific script file if you need
 // <script src="scripts/myscript.js"></script>
 
