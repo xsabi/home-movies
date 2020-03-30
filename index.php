@@ -11,7 +11,7 @@ include_once 'components/head.php';
 <?php 
 // add general jQuery and Materialize scrip files
 include_once 'components/scripts.php';
-
+include_once 'register.php';
 // add below here your page specific script file if you need
 // <script src="scripts/myscript.js"></script>
 
