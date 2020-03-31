@@ -17,5 +17,18 @@
 
   .material-icons {
     color: white;
+    
     }
+
+    input{
+
+      width: 2rem;
+      height : 1rem;
+    }
+
+    ul {
+      -webkit-column-count: 3;
+      -moz-column-count: 3;
+      column-count: 3;
+  }
   

@@ -14,14 +14,6 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Main application stylesheet -->
     <link rel="stylesheet" href="style/style.css">
-    <script type="text/javascript">
-            $(document).ready(function(){
-
-                    $("sort").on("click", function () {
-                        $orderType = 'ASC';
-                    });
-                    
-            });
-    </script>
+    
 </head>
 <body>
