@@ -3,11 +3,22 @@
 <!-- Compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
+<!-- This is materialize CSS for the selection categories -->
 <script>
           $(document).ready(function(){
         $('select').formSelect();
       });
-    </script>
+</script>
+<!-- This is materialize CSS for the selection playlists -->
+<script>  $('.dropdown-trigger').dropdown();</script>
+
+<script>
+
+$(document).ready(function() {
+    M.updateTextFields();
+  });
+  
+</script>
 <script>
 $(function(){
 	$('input[type="submit"]').click(function(e){
