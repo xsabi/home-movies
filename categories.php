@@ -9,7 +9,7 @@ include_once 'components/navbar.php';
 ?>
 
 <main class="green lighten-3">
-    <h1>Home page</h1>
+    <h1>Categories page</h1>
 </main>
 
 <?php 
