@@ -13,6 +13,41 @@ include_once 'components/database.php';
 //echo 
 include_once 'components/navbar.php';
 
+
+if (!empty($_POST)) {
+
+	// Basics validations
+	if (isset($_POST['name']) && empty($_POST['name'])) {
+		$errors[] = 'Name of the playlist is mandatory';
+	} 
+    if (isset($_POST['creation_date']) && empty($_POST['creation_date'])) {
+		$errors[] = 'Set creation date.';
+	} 
+    if (isset($_POST['name']) && empty($_POST['name'])) {
+		$errors[] = 'Name of the playlist is mandatory';
+	} 
+	if (count($errors) === 0) {
+		// If no errors, insert into DB
+		$query = "INSERT INTO playlist(name, creation_date, user_id) 
+			VALUES('" . $_POST['name'] . "','" . $_POST['creation_date'] . "','" . $_POST['user_id'] . "')";
+		// echo $query;
+
+		// Send an SQL request to our DB
+		$result_query = mysqli_query($connect, $query);
+
+		if ($result_query) {
+			echo '<div class="green" color="green">Category successfully addded !</div>';
+		} else {
+			echo '<div class="red" color="red">Error inserting into the DB. </div>';
+		}
+	} else {
+		echo implode('<br>', $errors);
+	}
+}
+
+
+
+
 // retrieve data from playlist
 if (isset($_GET['playlistForm'])) {
 $query = "SELECT playlist.id, playlist.name, playlist.creation_date, user.first_name, user.last_name FROM playlist INNER JOIN user ON (playlist.user_id = user.id) WHERE user.id = ".$userId;
@@ -57,6 +92,16 @@ $result_query = mysqli_query($connect, $result);
         <div>
             <label for="name">Name of the Playlist :</label>
 			<input type="text" name="name" id="name" required>
+		</div>
+        <div>
+        <div>
+            <label for="creation_date">Date of creation :</label>
+			<input type="text" name="creation_date" id="creation_date" required>
+		</div>
+        <div>
+        <div>
+            <label for="user_id">User:</label>
+			<input type="text" name="user_id" id="user_id" required>
 		</div>
         <div>
        <input class="waves-effect waves-light btn" type="submit" name="addSubmit" value="Add Playlist"></a>
