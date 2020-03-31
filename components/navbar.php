@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-// !!!! for debug
+
 if (isset($_SESSION['userID']) && !empty($_SESSION['userID'])) {
     $userId = $_SESSION['userID'];
     $userName = $_SESSION['userName'];
