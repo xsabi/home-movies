@@ -14,5 +14,6 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Main application stylesheet -->
     <link rel="stylesheet" href="style/style.css">
+    
 </head>
 <body>
