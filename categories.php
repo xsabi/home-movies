@@ -45,7 +45,6 @@ if (!empty($_POST)) {
 }
 
 
-
 include_once 'components/database.php';
 $result = "SELECT id,name FROM category";
 
