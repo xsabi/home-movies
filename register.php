@@ -142,39 +142,7 @@ if (count($errors) === 0) {
 				</form>
 			</div>
 		</div>
-<<<<<<< Updated upstream
-        </div>
-
-
-<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-<script>
-   
-$(function(){
-   //register click eventhandler for login button
-    $('#register_wrong').click(function(e){
-      console.log('Register button clicked...');
-      e.preventDefault();
-      $.ajax({
-        // url: 'register.php',
-        type: 'post',
-        data: $('form').serialize(),
-        success: function(result) {
-        
-         console.log('<div class="red">'+result+'</div>');
-          // $('#registerForm').html('<div class="green">'+result+'</div>');
-        },
-        error: function(err){
-          console.log('<div class="red">'+result+'</div>');
-                  // $('#registerForm').html('<div class="red">'+result+'</div>');
-          // If ajax errors happens
-        }
-      });
-    });
-  });
-</script>
-=======
     </div>
->>>>>>> Stashed changes
 
 <?php 
 include_once 'components/script.php';
