@@ -6,16 +6,17 @@ include_once 'components/head.php';
 // here comes your PHP code generating the body content of your page
 
 include_once 'components/navbar.php';
+
+$orderType = 'DESC';
 ?>
 
 <main class="green lighten-3">
-<div class="card-action"><span name="sort">Sort</span></div>
-  <div class="row">
   
+  <div class="row">
+  <div title="Sort by Date" class=" hide-on-med-and-down"><i class="small material-icons" id = sort>sort</i></div>
+  
+   
   <?php
-  //to execute the query
-  $orderType = 'DESC';
-
   //retrieves results as an associative array
   $query = 'SELECT * FROM  movie ORDER BY release_date ' . $orderType;
 
@@ -32,11 +33,11 @@ include_once 'components/navbar.php';
         <div class="card-content">
           <span class="badge green lighten-2 right"><?= $row['release_date']?></span>
           <p><?= $row['synopsis']?></p>
+          <a href="details.php?id=<?= $row['id']?>">More Info</a>
         </div>
         <div class="card-action">
-          <a href="details.php?id=<?= $row['id']?>">More Info</a>
-          <a href="editmovie.php?id=<?= $row['id']?>">Edit</a>
-          <a href="addplaylist.php?id=<?= $row['id']?>">Add playlist</a>
+          <a href="editmovie.php?id=<?= $row['id']?>">Edit</a>|
+          <a href="addplaylist.php?id=<?= $row['id']?>">Add to playlist</a>
         </div>
       </div>
     </div>
