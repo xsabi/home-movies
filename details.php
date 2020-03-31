@@ -1,12 +1,14 @@
+<?php
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+// add the general head and body opening HTML tags including all common stylesheets
+include_once 'components/head.php';
+
+// here comes your PHP code generating the body content of your page
+
+include_once 'components/navbar.php';
+?>
+
+<main class="green lighten-3">
 <?php
 
 if (isset($_GET['id'])) {
@@ -34,5 +36,17 @@ if (isset($_GET['id'])) {
         }
 }
 ?>
-</body>
-</html>
+</main>
+
+<?php 
+include_once 'components/footer.php';
+
+// add general jQuery and Materialize scrip files
+include_once 'components/script.php';
+
+// add below here your page specific script file if you need
+// <script src="scripts/myscript.js"></script>
+
+// including the general closing body HTML tags
+include_once 'components/tail.php';
+?>
