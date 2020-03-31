@@ -9,6 +9,13 @@
     flex: 1 0 auto;
   }
 
+  .dialog {
+    background-color: beige;
+    width: 70%;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 20px;
+  }
   .sort{
     display: flex;
     text-align: right;
@@ -30,5 +37,13 @@
       -webkit-column-count: 3;
       -moz-column-count: 3;
       column-count: 3;
+  }
+
+  .page-content {
+    background-color: beige;
+    width: 90%;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 20px;
   }
   
