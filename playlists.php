@@ -47,7 +47,7 @@ $result_query = mysqli_query($connect, $result);
 
 <!-- Dropdown Structure -->
 <ul class='dropdown-content' id="playlist" name ="playlist"><?php while ($row1 = mysqli_fetch_array($result_query)):;?>
-  <li value="<?php echo $row1[0];?>"><?php echo $row1[1];?><a href="#!"></a></li>
+  <li><a href="#!" value="<?php echo $row1[0];?>"><?php echo $row1[1];?></a></li>
   <?php endwhile;?>
 
 
@@ -63,7 +63,7 @@ $result_query = mysqli_query($connect, $result);
        <input class="waves-effect waves-light btn" type="submit" name="updSubmit" value="Update Playlist"></a>
        <input class="waves-effect waves-light btn" type="submit" name="delSubmit" value="Delete Playlist"></a>
     </form>
-    </section>
+    
 </main>
 
 <?php 
