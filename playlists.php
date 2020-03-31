@@ -36,7 +36,7 @@ if (!empty($_POST)) {
 		$result_query = mysqli_query($connect, $query);
 
 		if ($result_query) {
-			echo '<div class="green" color="green">Category successfully addded !</div>';
+			echo '<div class="green" color="green">Playlist successfully addded !</div>';
 		} else {
 			echo '<div class="red" color="red">Error inserting into the DB. </div>';
 		}
