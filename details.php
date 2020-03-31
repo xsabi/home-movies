@@ -18,6 +18,10 @@ if (isset($_GET['id'])) {
                         echo '<p> Date of Realease :'.$row['release_date'].' </p>';
                         echo '<p> Synopsis :  '.$row['synopsis'].' </p>';
                 echo '</div>';
+                echo '<div>';
+                echo '<a href="catalogue.php">back to catalogue</a>';
+                echo '</div>';
+
             }
         }
 }
