@@ -13,12 +13,14 @@ $orderType = 'ASC ';
 <main class="green lighten-3">
 
   <div class="row">
-  <form name="sortform" method="get">
-      <button class="waves-effect waves-light btn" name= "orderby" value = "desc" type="submit">Sort</button>
+  <div class="sort">
+  <form class="sortform" method="get">
+      <button class="waves-effect waves-light btn" name= "orderby"  id = "desc" value = "desc" type="submit">Sort</button>
     </form>
-    <form name="sortform" method="get">
-      <button class="waves-effect waves-light btn" name= "orderby" value = "asc" type="submit">Sort Asc</button>
+    <form class="sortform" method="get">
+      <button  class="waves-effect waves-light btn" name= "orderby"   id = "desc" value = "desc"type="submit">Sort Asc</button>
     </form>
+</div>
 <?php 
         if(isset($_GET['orderby'])){ 
          

@@ -30,4 +30,15 @@
     border-radius: 20px;
   }
 
+  .sort{
+    display: flex;
+  }
+
+  .sortform{
+    display:inline-block;
+  }
+ .sortform button{
+
+    margin: 1rem;
+  }
   
