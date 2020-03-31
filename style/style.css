@@ -9,7 +9,6 @@
     flex: 1 0 auto;
   }
 
-<<<<<<< HEAD
   .dialog {
     background-color: beige;
     width: 70%;
@@ -17,7 +16,6 @@
     padding: 30px;
     border-radius: 20px;
   }
-=======
   .sort{
     display: flex;
     text-align: right;
@@ -26,6 +24,13 @@
 
   .material-icons {
     color: white;
-    }
->>>>>>> origin/master
+  }
+
+  .page-content {
+    background-color: beige;
+    width: 90%;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 20px;
+  }
   
