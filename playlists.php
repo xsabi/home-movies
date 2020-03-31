@@ -39,10 +39,11 @@ $result_query = mysqli_query($connect, $result);
 ?>
 
 <main class="green lighten-3">
-    <h1>Playlists page</h1>
+<section class="page-content">
+    <h4>Playlists page</h4>
     <form method="POST" id="playlistForm">
        <!-- Dropdown Trigger -->
-  <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Select a playlist</a>
+  <a class='dropdown-trigger btn' href='#' data-target='playlist'>Select a playlist</a>
 
 <!-- Dropdown Structure -->
 <ul class='dropdown-content' id="playlist" name ="playlist"><?php while ($row1 = mysqli_fetch_array($result_query)):;?>
@@ -61,7 +62,8 @@ $result_query = mysqli_query($connect, $result);
        <input class="waves-effect waves-light btn" type="submit" name="addSubmit" value="Add Playlist"></a>
        <input class="waves-effect waves-light btn" type="submit" name="updSubmit" value="Update Playlist"></a>
        <input class="waves-effect waves-light btn" type="submit" name="delSubmit" value="Delete Playlist"></a>
-	</form>
+    </form>
+    </section>
 </main>
 
 <?php 
