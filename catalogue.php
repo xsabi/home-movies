@@ -9,6 +9,7 @@ include_once 'components/navbar.php';
 ?>
 
 <main class="green lighten-3">
+<div class="card-action"><span name="sort">Sort</span></div>
   <div class="row">
   
   <?php
@@ -21,8 +22,8 @@ include_once 'components/navbar.php';
   $movieresults = mysqli_query($connect, $query);
   while ($row = mysqli_fetch_assoc($movieresults)) {
   ?>
-
-    <div class="col s12 m4">
+    
+    <div class="col s12 m2">
       <div class="card">
         <div class="card-image">
           <img src="<?= $row['poster']?>" alt="<?= $row['title']?>">
@@ -33,7 +34,7 @@ include_once 'components/navbar.php';
           <p><?= $row['synopsis']?></p>
         </div>
         <div class="card-action">
-          <a href="details.php?id=<?= $row['id']?>">Details</a>
+          <a href="details.php?id=<?= $row['id']?>">More Info</a>
           <a href="editmovie.php?id=<?= $row['id']?>">Edit</a>
           <a href="addplaylist.php?id=<?= $row['id']?>">Add playlist</a>
         </div>

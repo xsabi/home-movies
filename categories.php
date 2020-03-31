@@ -18,9 +18,9 @@ if (!empty($_POST)) {
 	// Basics validations
 	if (empty($_POST['name'])) {
 		$errors[] = 'Name of the category is mandatory';
-	}
+	} 
 
-	
+
 	if (count($errors) === 0) {
 
 		// If no errors, insert into DB
