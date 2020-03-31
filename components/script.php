@@ -18,10 +18,12 @@ $(function(){
 			type: 'post',
 			data: $('form').serialize(),
 			success: function(result) {
-				$('#resultForm').html('<div class="green">'+result+'</div>');
+                // $('#resultForm').html('<div class="green">'+result+'</div>');
+             
 			},
 			error: function(err){
-                $('#resultForm').html('<div class="red">'+result+'</div>');
+                // $('#resultForm').html('<div class="red">'+result+'</div>');
+              
 				// If ajax errors happens
 			}
 		});
