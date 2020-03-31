@@ -42,7 +42,15 @@
     border-radius: 20px;
   }
 
+  .sort{
+    display: flex;
+  }
+
+  .sortform{
+    display:inline-block;
+  }
  .sortform button{
-    padding:2rem;
+
+    margin: 1rem;
   }
   
