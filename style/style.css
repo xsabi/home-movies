@@ -8,4 +8,12 @@
   main {
     flex: 1 0 auto;
   }
+
+  .dialog {
+    background-color: beige;
+    width: 70%;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 20px;
+  }
   
