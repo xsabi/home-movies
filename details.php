@@ -22,12 +22,17 @@ if (isset($_GET['id'])) {
 
             $movieresults = mysqli_query($connect, $query);
             while ($row = mysqli_fetch_assoc($movieresults)) {?>
+                <div class="col s12 m2">
+                    <img src="<?= $row['poster']?>" alt= "<?= $row['title']?>">
+                
                 <div>
-                        <img src="<?= $row['poster']?>" alt= "<?= $row['title']?>">
                         Movie : <span class="card-title"><?= $row['title'] ?></span>
                         <p> Date of Realease :<?= $row['release_date']?></p>
-                        echo '<p> Synopsis :  <?= $row['synopsis']?></p>
+                        <p> Synopsis :  <?= $row['synopsis']?></p>
+                
                 </div>
+                </div>
+
                 <div>
                 <a href="catalogue.php">back to catalogue</a>
                 </div>
