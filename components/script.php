@@ -5,10 +5,11 @@
 
 <!-- This is materialize CSS for the selection categories -->
 <script>
-          $(document).ready(function(){
-        $('select').formSelect();
-      });
+  $(document).ready(function(){
+    $('select').formSelect();
+  });
 </script>
+
 <!-- This is materialize CSS for the selection playlists -->
 <script>  $('.dropdown-trigger').dropdown();</script>
 
@@ -17,11 +18,10 @@
 $(document).ready(function() {
     M.updateTextFields();
   });
-  
-</script>
-<script>
-$(function(){
-	$('input[type="XXXsubmit"]').click(function(e){
+
+/*
+  $(function(){
+	$('input[type="submit"]').click(function(e){
 		console.log('It is here...');
 		e.preventDefault();
 		$.ajax({
@@ -40,9 +40,9 @@ $(function(){
 		});
 	});
 });
+*/
 
-
-
+/*
         $('#category').click(function(data){
           let query = $(this).val();
           if (query != "") {
@@ -66,8 +66,8 @@ $(function(){
           $('#name').css('display', 'none');
         }
       });
-
-
+*/
+/*
 $(function() {
     $("select").on("change", function() {
         if($(this).val() === "") {
@@ -77,6 +77,6 @@ $(function() {
         }
     });
 });
-  
+*/  
 
 </script>

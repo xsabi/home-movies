@@ -1,13 +1,9 @@
 <?php
 
-session_start();
-
 // add the general head and body opening HTML tags including all common stylesheets
 include_once 'components/head.php';
 
 // here comes your PHP code generating the body content of your page
-
-// include_once 'components/navbar.php';
 ?>
 
 <main class="green lighten-3">
@@ -64,8 +60,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 ?>
-	<div class="container">
-		<h4>Log in</h4>
+		<div class="container">
+			<h4>Log in</h4>
 			<div class="row">
 				<form class="col s12" id="loginForm" method="POST">		
 					<div class="row">
@@ -83,13 +79,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 							<label for="logPassword">Password :</label>
 							<input type="password" name="logPassword" id="logPassword" 
 								class="validate <?php if (isset($errors['logPassword'])) echo 'invalid';?>"
-								required
-								value="<?= $password?>">
+								value="<?= $password?>" required>
 							<span class="helper-text" data-error="<?php if (isset($errors['logPassword'])) echo $errors['logPassword']?>" data-success=""></span>
 						</div>
 					</div>				
-					<input class="waves-effect waves-light btn" type="submit" name="submit" id="login" value="login"> 
-					<a href="register.php" class="waves-effect waves-light btn right">Register</a> 
+					<div class="row">
+						<input class="btn" type="submit" name="submit" id="login" value="Login"> 
+						<a href="register.php" class="waves-effect waves-light btn right">Register</a> 
+					</div>				
 				</form>
 			</div>
 		</div>

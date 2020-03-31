@@ -4,8 +4,6 @@
 include_once 'components/head.php';
 
 // here comes your PHP code generating the body content of your page
-
-// include_once 'components/navbar.php';
 ?>
 
 <main class="green lighten-3">
@@ -90,8 +88,9 @@ if (count($errors) === 0) {
         $result_query = mysqli_query($connect, $query);
         $row = mysqli_fetch_assoc($result_query);
         //var_dump($row);
-        $_SESSION['userId'] = $row['id'];
+        $_SESSION['userID'] = $row['id'];
         $_SESSION['userName'] = $firstName . ' ' . $lastName;
+
     } else {
         // echo '<div class="red" color="red">Error inserting into the DB. </div>';
     }
@@ -101,7 +100,6 @@ if (count($errors) === 0) {
 }
 ?>
 
-<?php include_once 'components/head.php'; ?>
 	<div class="container <?php if (isset($result_query) && $result_query) echo 'hide';?>">
 		<h4>Register a new user</h4>
 			<div class="row">
@@ -143,7 +141,7 @@ if (count($errors) === 0) {
 						</div>
 					</div>
 			
-				<input class="waves-effect waves-light btn" type="submit" name="submit" id="register" value="register"> 
+				  <input class="btn" type="submit" name="submit" id="register" value="register"> 
 		
 				</form>
 			</div>

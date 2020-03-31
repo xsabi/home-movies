@@ -21,19 +21,7 @@
     text-align: right;
 
   }
-
-  .material-icons {
-    color: white;
-    
-    }
-
-    input{
-
-      width: 2rem;
-      height : 1rem;
-    }
-
-
+  
   .page-content {
     background-color: beige;
     width: 90%;
@@ -42,7 +30,4 @@
     border-radius: 20px;
   }
 
- .sortform button{
-    padding:2rem;
-  }
   

@@ -1,12 +1,10 @@
 <?php
 
-session_start();
-
-if (true || isset($_SESSION['userID']) && !empty($_SESSION['userID'])) {
-    //$userId = $_SESSION['userID'];
-    //$userName = $_SESSION['userName'];
-    $userId = 2;
-    $userName = 'John Doe';
+if (isset($_SESSION['userID']) && !empty($_SESSION['userID'])) {
+    $userId = $_SESSION['userID'];
+    $userName = $_SESSION['userName'];
+    //$userId = 2;
+    //$userName = 'John Doe';
 } else {
     header('Location: login.php');
     exit;
