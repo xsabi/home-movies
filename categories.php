@@ -47,8 +47,9 @@ $result_query = mysqli_query($connect, $result);
 		<form method="POST" id="resultForm">
 			<div class="row">
 				<div class="input-field col s4">
-					<label for="category">Categories:</label>
+					<label for="category"></label>
 					<select id="category" name ="category">
+					<option value="" disabled selected>Choose one category</option>
 						<?php while ($row1 = mysqli_fetch_array($result_query)):;?>
 						<option value="<?php echo $row1[0];?>"><?php echo $row1[1];?></option>
 						<?php endwhile;?>
