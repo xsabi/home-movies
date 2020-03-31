@@ -112,7 +112,7 @@ if (count($errors) === 0) {
               <input type="text" name="regFirstname" id="regFirstname" 
                 class="validate <?php if (isset($errors['regFirstname'])) echo 'invalid';?>"
                 value="<?= $firstName?>">
-							<span class="helper-text" data-error="<?= $errors['regFirstname']?>" data-success="Valid"></span>
+							<span class="helper-text" data-error="<?php if (isset($errors['regFirstname'])) echo $errors['regFirstname']?>" data-success="Valid"></span>
 						</div>
                     </div>
                     <div class="row">
@@ -121,7 +121,7 @@ if (count($errors) === 0) {
               <input type="text" name="regLastname" id="regLastname" 
                 class="validate <?php if (isset($errors['regLastname'])) echo 'invalid';?>"
                 value="<?= $lastName?>">
-							<span class="helper-text" data-error="<?= $errors['regLastname']?>" data-success="Valid"></span>
+							<span class="helper-text" data-error="<?php if (isset($errors['regLastname'])) echo $errors['regLastname']?>" data-success="Valid"></span>
 						</div>
 					</div>
 					<div class="row">
@@ -130,7 +130,7 @@ if (count($errors) === 0) {
               <input type="email" name="regEmail" id="regEmail" 
                 class="validate <?php if (isset($errors['regEmail'])) echo 'invalid';?>"
                 value="<?= $email?>">
-							<span class="helper-text" data-error="<?= $errors['regEmail']?>" data-success="Valid"></span>
+							<span class="helper-text" data-error="<?php if (isset($errors['regEmail'])) echo $errors['regEmail']?>" data-success="Valid"></span>
 						</div>
 					</div>
 					<div class="row">
@@ -139,7 +139,7 @@ if (count($errors) === 0) {
               <input type="password" name="regPassword" id="regPassword" 
                 class="validate <?php if (isset($errors['regPassword'])) echo 'invalid';?>"
                 value="<?= $password?>">
-							<span class="helper-text" data-error="<?= $errors['regPassword']?>" data-success="Valid"></span>
+							<span class="helper-text" data-error="<?php if (isset($errors['regPassword'])) echo $errors['regPassword']?>" data-success="Valid"></span>
 						</div>
 					</div>
 			

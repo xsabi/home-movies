@@ -75,7 +75,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 								class="validate <?php if (isset($errors['logEmail'])) echo 'invalid';?>" 
 								required
 								value="<?= $email?>">
-							<span class="helper-text" data-error="<?= $errors['logEmail']?>" data-success=""></span>
+							<span class="helper-text" data-error="<?php if (isset($errors['logEmail'])) echo $errors['logEmail']?>" data-success=""></span>
 						</div>
 					</div>
 					<div class="row">
@@ -85,7 +85,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 								class="validate <?php if (isset($errors['logPassword'])) echo 'invalid';?>"
 								required
 								value="<?= $password?>">
-							<span class="helper-text" data-error="<?= $errors['logPassword']?>" data-success=""></span>
+							<span class="helper-text" data-error="<?php if (isset($errors['logPassword'])) echo $errors['logPassword']?>" data-success=""></span>
 						</div>
 					</div>				
 					<input class="waves-effect waves-light btn" type="submit" name="submit" id="login" value="login"> 

@@ -21,7 +21,7 @@ $(document).ready(function() {
 </script>
 <script>
 $(function(){
-	$('input[type="submit"]').click(function(e){
+	$('input[type="XXXsubmit"]').click(function(e){
 		console.log('It is here...');
 		e.preventDefault();
 		$.ajax({
