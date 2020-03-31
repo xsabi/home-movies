@@ -107,6 +107,7 @@ $result_query = mysqli_query($connect, $result);
        <input class="waves-effect waves-light btn" type="submit" name="addSubmit" value="Add Playlist"></a>
        <input class="waves-effect waves-light btn" type="submit" name="updSubmit" value="Update Playlist"></a>
        <input class="waves-effect waves-light btn" type="submit" name="delSubmit" value="Delete Playlist"></a>
+       </div>
     </form>
     
 </main>
